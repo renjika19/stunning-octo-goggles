@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -7,14 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  message = 'Some Welcome Message'
+  message = 'Some Welcome Message';
+  name = '';
   // String message = "Some Welcome Message"
 
-  //public SpringbootFirstWebApplication(){
-  constructor() { }
+  // public SpringbootFirstWebApplication(){
+
+  // ActivateRoute
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.message)
+    console.log(this.message);
+    // console.log(this.route.snapshot.params['name']);
+    this.name = this.route.snapshot.params['name'];
   }
 
 }
