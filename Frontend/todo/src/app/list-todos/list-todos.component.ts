@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
+
+// -Future
+// -No Navigation Menu and Footer
+// -Formatting -  Bootstrap
+// -No Security for Menus
+// -Hardcoded Logic in the TodoList and Login Components
+// -Remaining Functionality - Edit, Delete, Add
+// -Spring Boot
+// -Spring Security
+
+
 export class Todo {
   constructor(
     public id: number,
