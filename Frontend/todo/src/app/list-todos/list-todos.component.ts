@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-// -Future
+// -*Future*
 // -No Navigation Menu and Footer
 // -Formatting -  Bootstrap
 // -No Security for Menus
