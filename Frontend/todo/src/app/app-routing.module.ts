@@ -14,9 +14,7 @@ const routes: Routes = [
   { path:'welcome/:name', component: WelcomeComponent, canActivate: [RouteGaurdService]},
   { path:'todos', component:ListTodosComponent,canActivate: [RouteGaurdService] },
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGaurdService]},
-
   { path: '**', component: ErrorComponent}
- 
 ];
 
 @NgModule({
