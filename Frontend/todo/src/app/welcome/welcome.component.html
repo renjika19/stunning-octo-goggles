@@ -3,3 +3,8 @@
 <div class="container">
     Welcome {{name}}. You can manage your todo's<a routerLink='/todos'> here</a>
 </div>
+
+<div class="container">
+Click Here to get a customize welcome message
+<button (click)="getWelcomeMessage()" class="btn btn-success">Get Welcome Message</button>
+</div>

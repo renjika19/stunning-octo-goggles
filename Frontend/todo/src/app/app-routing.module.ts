@@ -9,10 +9,11 @@ import { RouteGaurdService } from './service/route-gaurd.service';
 
 // welcome
 const routes: Routes = [
-  { path:'', component: LoginComponent}, //canActivate, RouteGuardService
-  { path:'login', component: LoginComponent},
-  { path:'welcome/:name', component: WelcomeComponent, canActivate: [RouteGaurdService]},
-  { path:'todos', component:ListTodosComponent,canActivate: [RouteGaurdService] },
+  // canActivate, RouteGuardService
+  { path: '', component: LoginComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGaurdService]},
+  { path: 'todos', component: ListTodosComponent, canActivate: [RouteGaurdService] },
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGaurdService]},
   { path: '**', component: ErrorComponent}
 ];

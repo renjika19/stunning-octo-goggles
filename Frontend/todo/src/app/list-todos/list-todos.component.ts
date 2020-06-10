@@ -35,8 +35,7 @@ export class ListTodosComponent implements OnInit {
     // {id : 1, description : 'Learn to Dance'},
     // {id : 2, description : 'Become an Expert at Angular'},
     // {id : 3, description : 'Visit Nigeria'}
-  ]
-
+  ];
   // todo = {
   //   id: 1,
   //   description: 'Learn to Dance'
