@@ -17,8 +17,10 @@ export class WelcomeComponent implements OnInit {
   // public SpringbootFirstWebApplication(){
 
   // ActivateRoute
-  constructor(private route: ActivatedRoute,
-    private service:WelcomeDataService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private service: WelcomeDataService
+  ) {}
 
   ngOnInit() {
     // console.log(this.message);
@@ -26,36 +28,35 @@ export class WelcomeComponent implements OnInit {
     this.name = this.route.snapshot.params['name'];
   }
 
-  getWelcomeMessage(){
+  getWelcomeMessage() {
     // console.log(this.service.executeHelloWorldBeanService());
     this.service.executeHelloWorldBeanService().subscribe(
-    response => this.handleSuccessfulResponse(response),
-    error => this.handleErrorResponse(error)
+      (response) => this.handleSuccessfulResponse(response),
+      (error) => this.handleErrorResponse(error)
     );
 
     // console.log('last line of getWelcomeMessage')
     // console.log("get welcome message");
   }
 
-  handleSuccessfulResponse(response){
-    this.welcomeMessageFromService = response.message
+  handleSuccessfulResponse(response) {
+    this.welcomeMessageFromService = response.message;
     // console.log(response);
     // console.log(response.message);
   }
 
-  handleErrorResponse(error){
+  handleErrorResponse(error) {
     // console.log(error);
     // console.log(error.error);
     // console.log(error.error.message);
     this.welcomeMessageFromService = error.error.message;
   }
 
-
-  getWelcomeMessageWithParameter(){
+  getWelcomeMessageWithParameter() {
     // console.log(this.service.executeHelloWorldBeanService());
     this.service.executeHelloWorldServiceWithPathVariable(this.name).subscribe(
-    response => this.handleSuccessfulResponse(response),
-    error => this.handleErrorResponse(error)
+      (response) => this.handleSuccessfulResponse(response),
+      (error) => this.handleErrorResponse(error)
     );
   }
 }
