@@ -18,11 +18,22 @@ public class TodoHardcodedService {
 	static {
 		todos.add(new Todo(++idCounter, "in28minutes", "Learn to Dance", new Date(), false ));
 		todos.add(new Todo(++idCounter, "in28minutes", "Learn about Micorservices", new Date(), false ));
-		todos.add(new Todo(++idCounter, "in28minutes", "Learn to about Angular", new Date(), false ));
+		todos.add(new Todo(++idCounter, "in28minutes", "Learn about Angular", new Date(), false ));
 	}
 	
 	public List<Todo> findAll(){
 		return todos;
+	}
+	
+	public Todo save(Todo todo) {
+		if(todo.getId()==-1 || todo.getId()==0) {
+			todo.setId(++idCounter);
+			todos.add(todo);
+		}else {
+			deleteById(todo.getId());
+			todos.add(todo);
+		}
+		return todo;
 	}
 	
 	public Todo deleteById(long id) {
@@ -36,7 +47,7 @@ public class TodoHardcodedService {
 		return null;
 	}
 
-	private Todo findById(long id) {
+	public Todo findById(long id) {
 		for(Todo todo:todos) {
 			if(todo.getId() == id) {
 				return todo;
@@ -46,6 +57,13 @@ public class TodoHardcodedService {
 		return null;
 	}
 	
+	// EDIT/Update a todo
+	// PUT /users/{user_name}/todos/{todo_id}
 	
+	
+	
+	
+	//Create a new Todo
+	// POST /users/{user_name}/todos/
 
 }

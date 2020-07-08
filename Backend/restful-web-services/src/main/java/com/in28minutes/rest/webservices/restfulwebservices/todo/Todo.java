@@ -12,6 +12,10 @@ public class Todo {
 	private boolean isDone;
 	
 	
+	// Default Constructor
+	protected Todo() {
+		
+	}
 	
 	
 	
