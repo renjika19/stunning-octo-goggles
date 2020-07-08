@@ -29,4 +29,13 @@ export class TodoComponent implements OnInit {
         )
   }
 
+  saveTodo(){
+    this.todoService.updateTodo('in28minutes', this.id, this.todo)
+    .subscribe(
+      data => {
+       console.log(data)
+      }  
+    )
+  }
+
 }
